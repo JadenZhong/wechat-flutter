@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'Mine/MInfoVC.dart';
+import 'Mine/MWalletVC.dart';
 class MineView extends StatefulWidget{
   @override
   _MineViewState createState() => new _MineViewState();
@@ -19,6 +21,15 @@ class _MineViewState extends State{
                 title: new Text("Tony"),
                 subtitle: new Text("微信号：ty001"),
                 trailing: new Icon(Icons.fullscreen),
+                onTap: (){
+                  Navigator.of(context).push(
+                      new MaterialPageRoute(
+                          builder: (context){
+                            return new MInfoVC();
+                          }
+                      )
+                  );
+                },
               ),
               color: Colors.white,
             ),
@@ -30,6 +41,15 @@ class _MineViewState extends State{
               child: new ListTile(
                 leading: new Icon(Icons.call_to_action),
                 title: new Text("钱包"),
+                onTap: (){
+                  Navigator.of(context).push(
+                      new MaterialPageRoute(
+                          builder: (context){
+                            return new MWalletVC();
+                          }
+                      )
+                  );
+                },
               ),
               color: Colors.white,
               height: 50.0,
